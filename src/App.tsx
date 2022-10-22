@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from "react";
+import { useSelector } from "react-redux";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { Section, Login, Register, Home } from "./pages";
+import { getMe } from "./store/slices/auth";
+import './main.module.scss'
 
-function App() {
+const App: FC = () => {
+  const { accessToken } = useSelector(getMe);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route
+          path='login'
+          element={accessToken ? <Navigate to='/home' /> : <Login />}
+        />
+        <Route
+          path='register'
+          element={accessToken ? <Navigate to='/home' /> : <Register />}
+        />
+
+        <Route
+          path='section/:sectionID'
+          element={accessToken ? <Section /> : <Navigate to='/login' />}
+        />
+        <Route path=''>
+          <Route
+            index
+            element={accessToken ? <Home /> : <Navigate to='/login' />}
+          />
+          <Route
+            path='/:languageID'
+            element={accessToken ? <Home /> : <Navigate to='/login' />}
+          />
+        </Route>
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

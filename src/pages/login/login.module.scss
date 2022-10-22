@@ -1,0 +1,61 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    .form {
+      width: 384px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+
+
+      .inputBox {
+        width: 384px;
+        height: 55px;
+        background:rgb(30, 41, 59);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        input {
+          width: 300px;
+          height: 100%;
+          background:rgb(30, 41, 59);
+          outline: none;
+          border: none;
+          font-size: 16px;
+          color: #fff;
+        } 
+      }
+
+      button {
+        width: 100%;
+        height: 100%;
+        background: #2DB97C;
+        border-radius: 10px;
+        border: none;
+        font-size: 18px;
+      }
+      p {
+        font-family: 'Monograf';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        color: rgb(216, 198, 198);
+        text-decoration: underline;
+      }
+    }
+  }
+
+
+
+
+// .wrapper => login_wrapper__12322
