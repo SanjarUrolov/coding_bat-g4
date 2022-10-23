@@ -122,7 +122,7 @@ const Home: React.FC<HomeProps> = () => {
                 </div>
                 <p>{section.description}</p>
                 <h4>
-                  <BsTrophy /> Task
+                  <BsTrophy size='1.5rem'/> Task
                 </h4>
               </div>
             );

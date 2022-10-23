@@ -13,3 +13,11 @@ export interface Section {
   description: string;
   maxRate: number;
 }
+
+export interface Problem{
+  description:string, 
+id: number,
+methodSignature: string,
+section:number,
+title:string
+}

@@ -42,7 +42,6 @@ const Login: React.FC = () => {
     <div className={cls.wrapper}>
       <div className={cls.wrapper2}>
         <form className={cls.form} onSubmit={onSubmit}>
-              <label htmlFor="email">Email</label>
           <div className={cls.inputBox}>
             <AiOutlineUser style={stl} />
             <p>
